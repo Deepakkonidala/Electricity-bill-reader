@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+passlib[bcrypt]
+sqlalchemy
+pyjwt
+pdfplumber
+openpyxl
+pandas
+itsdangerous
+PyMuPDF
+pytesseract
+python-dotenv
+pillow

@@ -1,0 +1,25 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload PDF</title>
+</head>
+<body>
+    <h2>Upload Bill PDF</h2>
+
+    {% if message %}
+        <p style="color: green;"><strong>{{ message }}</strong></p>
+    {% endif %}
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/pdf" required><br><br>
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    {% if extracted_text %}
+        {% if "No usage data found" not in extracted_text %}
+            <p><strong>Extracted:</strong> {{ extracted_text }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <h3>Uploaded Excel Files</h3>
+    <ul>
+        {% for file in excel_files %}
+            <li><a href="/uploads/{{ file }}" target="_blank">{{ file }}</a></li>
+        {% else %}
+            <li>No Excel files found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Uploaded Raw PDF Files</h3>
+    <ul>
+        {% for raw in raw_files %}
+            <li><a href="/uploads/{{ raw }}" target="_blank">{{ raw.split('/')[-1] }}</a></li>
+        {% else %}
+            <li>No raw PDF files found.</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>
